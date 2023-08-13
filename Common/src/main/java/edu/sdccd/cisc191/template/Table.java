@@ -1,16 +1,11 @@
 package edu.sdccd.cisc191.template;
 
-import com.opencsv.CSVReader;
-import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import com.opencsv.bean.HeaderColumnNameTranslateMappingStrategy;
-import com.sun.corba.se.impl.ior.OldJIDLObjectKeyTemplate;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -19,11 +14,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toMap;
 
@@ -53,7 +45,7 @@ public class Table extends Application {
 
         location = new HashMap<>();
 
-        cvsToMap();
+        csvToMap();
         pushCVSDataToTable();
 
 
@@ -132,7 +124,7 @@ public class Table extends Application {
     /**
      * Parses cvs and pushes row data into a map of string, string city to state pairs
      */
-    public void cvsToMap() {
+    public void csvToMap() {
         List<CitiesStates> items = new CsvToBeanBuilder<CitiesStates>(new InputStreamReader(Table.class.getResourceAsStream("/cities_states.csv")))
                 .withType(CitiesStates.class)
                 .build()

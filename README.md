@@ -23,4 +23,4 @@ The client application used to connect to the server.
 1, 2, 5: Used a JavaFX application to have an interactive console menu that performs delete and find on a Map.Entry(HashMap).<br>
 3: Separated tasks in Table.java into several classes and have CitiesStates object<br>
 4: Used networking with client and server <br>
-9, 10: Converted CVS into Map through parallel streams/concurrency
+9, 10: Converted CSV into Map through parallel streams/concurrency
