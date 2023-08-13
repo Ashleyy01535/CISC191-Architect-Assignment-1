@@ -30,13 +30,11 @@ public class Client {
     // Convert object to string and format
     public static String objectToString() {
         // get object and convert to string
-        String location = Table.getLocation().toString();
+        String location = Table.getLocation();
 
-        // split take surrounding {} off
-        location = location.substring(1, location.length() -1);
         // split string by comma into city and state variables
         String city = location.substring(0, location.indexOf(","));
-        String state = location.substring(location.indexOf(",") + 2);
+        String state = location.substring(location.indexOf(",") + 1);
         // add line break between city and state
         location = city + "\n" + state;
         // locate all = char and replace with :
